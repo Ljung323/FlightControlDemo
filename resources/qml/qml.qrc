@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>FlightView/FlightView.qml</file>
+        <file>HomeView/HomeView.qml</file>
+        <file>FlightView/InfoView.qml</file>
+        <file>FlightView/ToolView.qml</file>
+        <file>FlightView/ActionListModel.qml</file>
+        <file>FlightView/InfoListModel.qml</file>
+    </qresource>
+</RCC>
