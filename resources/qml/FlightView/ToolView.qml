@@ -31,11 +31,12 @@ Item {
 
                 Layout.alignment: Qt.AlignHCenter
 
-                onClicked: {
-                    console.log("!!clicked!!")
-                    HomePresenter.connect()
-                }
+                onClicked: buttonTapped(model.title)
             }
         }
+    }
+
+    function buttonTapped(actionTitle) {
+        FlightPresenter.runAction(actionTitle, {})
     }
 }

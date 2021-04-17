@@ -1,10 +1,6 @@
-#include <chrono>
-#include <cstdint>
 #include <mavsdk/mavsdk.h>
 #include <iostream>
 #include <future>
-#include <memory>
-#include <thread>
 #include "sources/Flight/Framework/ConnectionDriver.h"
 
 using namespace mavsdk;
@@ -45,7 +41,8 @@ bool ConnectionDriver::connect()
     if (fut.wait_for(seconds(3)) == std::future_status::timeout) {
         std::cout << "No autopilot found, exiting." << std::endl;
         return false;
+    } else {
+        std::cout << "autopilot found." << std::endl;
+        return true;
     }
-
-    return true;
 }
