@@ -7,5 +7,6 @@
         <file>FlightView/ToolView.qml</file>
         <file>FlightView/ActionListModel.qml</file>
         <file>FlightView/InfoListModel.qml</file>
+        <file>FlightView/SelectAltitudeView.qml</file>
     </qresource>
 </RCC>

@@ -3,23 +3,13 @@
 #include <QJSEngine>
 #include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
 #include "sources/Flight/Domain/TakeoffUsecase.h"
+#include "sources/Flight/Domain/ChangeAltitudeUsecase.h"
 #include "sources/Flight/Domain/LandUsecase.h"
 
-FlightPresenter::FlightPresenter(TakeoffDriver* takeoffDriver, LandDriver* landDriver) {
+FlightPresenter::FlightPresenter(TakeoffDriver* takeoffDriver, ChangeAltitudeDriver* changeAltitudeDriver, LandDriver* landDriver) {
     this->takeoffDriver = takeoffDriver;
+    this->changeAltitudeDriver = changeAltitudeDriver;
     this->landDriver = landDriver;
-}
-
-void FlightPresenter::runAction(QJSValue action, QJSValue callback) {
-    QString actionTitle = action.toString();
-    if (actionTitle == "Takeoff") {
-        this->takeoff(callback);
-    } else if (actionTitle == "Land") {
-        this->land(callback);
-    } else {
-        std::cout << "invalid action" << std::endl;
-        this->runCallback(callback, false);
-    }
 }
 
 void FlightPresenter::runCallback(QJSValue callback, bool result) {
@@ -33,6 +23,11 @@ void FlightPresenter::takeoff(QJSValue callback)
 {
     TakeoffUsecase usecase(this->takeoffDriver);
     this->runCallback(callback, usecase.takeoff());
+}
+
+void FlightPresenter::changeAltitude(QJSValue targetAltitude, QJSValue callback) {
+    ChangeAltitudeUsecase usecase(this->changeAltitudeDriver);
+    this->runCallback(callback, usecase.changeAltitude(targetAltitude.toInt()));
 }
 
 void FlightPresenter::land(QJSValue callback) {

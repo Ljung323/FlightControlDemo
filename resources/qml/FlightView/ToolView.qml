@@ -3,8 +3,6 @@ import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 
 Item {
-    id: toolView
-
     ColumnLayout {
         spacing: 60
 
@@ -31,12 +29,8 @@ Item {
 
                 Layout.alignment: Qt.AlignHCenter
 
-                onClicked: buttonTapped(model.title)
+                onClicked: flightView.buttonTapped(model.title)
             }
         }
-    }
-
-    function buttonTapped(actionTitle) {
-        FlightPresenter.runAction(actionTitle, {})
     }
 }
