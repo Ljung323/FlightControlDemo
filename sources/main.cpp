@@ -3,8 +3,9 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include "sources/Flight/Framework/ConnectionDriver.h"
+#include "sources/Flight/Framework/TakeoffDriver.h"
 #include "sources/Flight/Presentation/Presenter/HomePresenter.h"
-#include <iostream>
+#include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,10 +18,13 @@ int main(int argc, char *argv[])
 
     // drivers
     ConnectionDriver connectionDriver(&mavsdk);
+    TakeoffDriver takeoffDriver(&mavsdk);
 
     // presenters
     HomePresenter homePresenter(&connectionDriver);
+    FlightPresenter flightPresenter(&takeoffDriver);
     engine.rootContext()->setContextProperty("HomePresenter", &homePresenter);
+    engine.rootContext()->setContextProperty("FlightPresenter", &flightPresenter);
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())

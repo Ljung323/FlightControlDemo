@@ -50,8 +50,8 @@ Page {
     }
 
     function connectButtonTapped(callback) {
-        HomePresenter.connect(function (result) {
-            if (result) {
+        HomePresenter.connect(function (object) {
+            if (object.result) {
                 console.log("connect succeeded")
                 callback()
             } else {
