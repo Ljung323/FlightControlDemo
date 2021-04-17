@@ -1,16 +1,9 @@
-#include <chrono>
-#include <cstdint>
 #include <mavsdk/mavsdk.h>
 #include <mavsdk/plugins/action/action.h>
 #include <iostream>
-#include <future>
-#include <memory>
-#include <thread>
 #include "sources/Flight/Framework/TakeoffDriver.h"
 
 using namespace mavsdk;
-using std::chrono::seconds;
-using std::this_thread::sleep_for;
 
 TakeoffDriver::TakeoffDriver(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;

@@ -2,6 +2,7 @@
 #include <QObject>
 #include <QJSValue>
 #include "sources/Flight/Framework/TakeoffDriver.h"
+#include "sources/Flight/Framework/LandDriver.h"
 
 class FlightPresenter: public QObject
 {
@@ -9,12 +10,14 @@ class FlightPresenter: public QObject
 
 private:
     TakeoffDriver* takeoffDriver;
+    LandDriver* landDriver;
 
     void runCallback(QJSValue callback, bool result);
     void takeoff(QJSValue callback);
+    void land(QJSValue callback);
 
 public:
-    FlightPresenter(TakeoffDriver* takeoffDriver);
+    FlightPresenter(TakeoffDriver* takeoffDriver, LandDriver* landDriver);
 
     Q_INVOKABLE void runAction(QJSValue action, QJSValue callback);
 };
