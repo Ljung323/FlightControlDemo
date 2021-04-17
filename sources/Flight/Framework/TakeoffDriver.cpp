@@ -29,7 +29,7 @@ bool TakeoffDriver::takeoff()
     if (takeoff_result != Action::Result::Success) {
         std::cout << "Takeoff failed:" << takeoff_result << std::endl;
         return false;
+    } else {
+        return true;
     }
-
-    return true;
 }

@@ -4,6 +4,7 @@
 #include <QQmlContext>
 #include "sources/Flight/Framework/ConnectionDriver.h"
 #include "sources/Flight/Framework/TakeoffDriver.h"
+#include "sources/Flight/Framework/ChangeAltitudeDriver.h"
 #include "sources/Flight/Framework/LandDriver.h"
 #include "sources/Flight/Presentation/Presenter/HomePresenter.h"
 #include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
@@ -19,12 +20,13 @@ int main(int argc, char *argv[])
 
     // drivers
     ConnectionDriver connectionDriver(&mavsdk);
+    ChangeAltitudeDriver changeAltitudeDriver(&mavsdk);
     TakeoffDriver takeoffDriver(&mavsdk);
     LandDriver landDriver(&mavsdk);
 
     // presenters
     HomePresenter homePresenter(&connectionDriver);
-    FlightPresenter flightPresenter(&takeoffDriver, &landDriver);
+    FlightPresenter flightPresenter(&takeoffDriver, &changeAltitudeDriver, &landDriver);
     engine.rootContext()->setContextProperty("HomePresenter", &homePresenter);
     engine.rootContext()->setContextProperty("FlightPresenter", &flightPresenter);
 

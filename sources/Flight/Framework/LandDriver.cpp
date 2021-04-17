@@ -24,7 +24,7 @@ bool LandDriver::land()
     if (land_result != Action::Result::Success) {
         std::cout << "Land failed:" << land_result << std::endl;
         return false;
+    } else {
+        return true;
     }
-
-    return true;
 }
