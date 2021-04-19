@@ -6,6 +6,7 @@
 #include "sources/Flight/Framework/AircraftInfoDriver.h"
 #include "sources/Flight/Framework/TakeoffDriver.h"
 #include "sources/Flight/Framework/ChangeAltitudeDriver.h"
+#include "sources/Flight/Framework/HorizontalMoveDriver.h"
 #include "sources/Flight/Framework/LandDriver.h"
 #include "sources/Flight/Presentation/Presenter/HomePresenter.h"
 #include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
@@ -23,12 +24,13 @@ int main(int argc, char *argv[])
     ConnectionDriver connectionDriver(&mavsdk);
     AircraftInfoDriver aircraftInfoDriver(&mavsdk);
     ChangeAltitudeDriver changeAltitudeDriver(&mavsdk);
+    HorizontalMoveDriver horizontalMoveDriver(&mavsdk);
     TakeoffDriver takeoffDriver(&mavsdk);
     LandDriver landDriver(&mavsdk);
 
     // presenters
     HomePresenter homePresenter(&connectionDriver);
-    FlightPresenter flightPresenter(&aircraftInfoDriver, &takeoffDriver, &changeAltitudeDriver, &landDriver);
+    FlightPresenter flightPresenter(&aircraftInfoDriver, &takeoffDriver, &changeAltitudeDriver, &horizontalMoveDriver, &landDriver);
     engine.rootContext()->setContextProperty("HomePresenter", &homePresenter);
     engine.rootContext()->setContextProperty("FlightPresenter", &flightPresenter);
 
