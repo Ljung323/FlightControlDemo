@@ -12,14 +12,15 @@ SOURCES += \
         sources/Flight/Domain/ConnectionUsecase.cpp \
         sources/Flight/Domain/HorizontalMoveUsecase.cpp \
         sources/Flight/Domain/LandUsecase.cpp \
+        sources/Flight/Domain/Position.cpp \
         sources/Flight/Domain/TakeoffUsecase.cpp \
-        sources/Flight/Framework/AirfractInfoDriver.cpp \
+        sources/Flight/Framework/AircraftInfoDriver.cpp \
         sources/Flight/Framework/ChangeAltitudeDriver.cpp \
         sources/Flight/Framework/ConnectionDriver.cpp \
         sources/Flight/Framework/HorizontalMoveDriver.cpp \
         sources/Flight/Framework/LandDriver.cpp \
         sources/Flight/Framework/TakeoffDriver.cpp \
-        sources/Flight/Presentation/DriverProtocol/AirfractInfoDriverProtocol.cpp \
+        sources/Flight/Presentation/DriverProtocol/AircraftInfoDriverProtocol.cpp \
         sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.cpp \
         sources/Flight/Presentation/DriverProtocol/ConnectionDriverProtocol.cpp \
         sources/Flight/Presentation/DriverProtocol/HorizontalMoveDriverProtocol.cpp \
@@ -49,14 +50,15 @@ HEADERS += \
     sources/Flight/Domain/ConnectionUsecase.h \
     sources/Flight/Domain/HorizontalMoveUsecase.h \
     sources/Flight/Domain/LandUsecase.h \
+    sources/Flight/Domain/Position.h \
     sources/Flight/Domain/TakeoffUsecase.h \
-    sources/Flight/Framework/AirfractInfoDriver.h \
+    sources/Flight/Framework/AircraftInfoDriver.h \
     sources/Flight/Framework/ChangeAltitudeDriver.h \
     sources/Flight/Framework/ConnectionDriver.h \
     sources/Flight/Framework/HorizontalMoveDriver.h \
     sources/Flight/Framework/LandDriver.h \
     sources/Flight/Framework/TakeoffDriver.h \
-    sources/Flight/Presentation/DriverProtocol/AirfractInfoDriverProtocol.h \
+    sources/Flight/Presentation/DriverProtocol/AircraftInfoDriverProtocol.h \
     sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h \
     sources/Flight/Presentation/DriverProtocol/ConnectionDriverProtocol.h \
     sources/Flight/Presentation/DriverProtocol/HorizontalMoveDriverProtocol.h \

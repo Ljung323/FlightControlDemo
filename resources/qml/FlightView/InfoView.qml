@@ -3,6 +3,8 @@ import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 
 Item {
+    property string aircraftBattery: "-"
+
     Rectangle {
         id: rect
         color: "#777777"
@@ -23,7 +25,7 @@ Item {
                     color: "#ffffff"
                 }
                 Text {
-                    text: qsTr(model.value)
+                    text: qsTr(FlightPresenter.toAircraftInfoValue(model.title))
                     color: "#ffffff"
                 }
             }

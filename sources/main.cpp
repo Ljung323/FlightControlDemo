@@ -3,6 +3,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include "sources/Flight/Framework/ConnectionDriver.h"
+#include "sources/Flight/Framework/AircraftInfoDriver.h"
 #include "sources/Flight/Framework/TakeoffDriver.h"
 #include "sources/Flight/Framework/ChangeAltitudeDriver.h"
 #include "sources/Flight/Framework/LandDriver.h"
@@ -20,13 +21,14 @@ int main(int argc, char *argv[])
 
     // drivers
     ConnectionDriver connectionDriver(&mavsdk);
+    AircraftInfoDriver aircraftInfoDriver(&mavsdk);
     ChangeAltitudeDriver changeAltitudeDriver(&mavsdk);
     TakeoffDriver takeoffDriver(&mavsdk);
     LandDriver landDriver(&mavsdk);
 
     // presenters
     HomePresenter homePresenter(&connectionDriver);
-    FlightPresenter flightPresenter(&takeoffDriver, &changeAltitudeDriver, &landDriver);
+    FlightPresenter flightPresenter(&aircraftInfoDriver, &takeoffDriver, &changeAltitudeDriver, &landDriver);
     engine.rootContext()->setContextProperty("HomePresenter", &homePresenter);
     engine.rootContext()->setContextProperty("FlightPresenter", &flightPresenter);
 
