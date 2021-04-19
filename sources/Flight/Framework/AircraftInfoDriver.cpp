@@ -33,7 +33,12 @@ void AircraftInfoDriver::subscribe() {
         std::cout << "Setting rate position failed:" << set_rate_position_result << std::endl;
     }
     telemetry.subscribe_position([this](Telemetry::Position position) {
-        this->position = Position(position.latitude_deg, position.longitude_deg, position.relative_altitude_m);
+        this->position = Position(
+                    position.latitude_deg,
+                    position.longitude_deg,
+                    position.relative_altitude_m,
+                    position.absolute_altitude_m
+                    );
     });
 
     const Telemetry::Result set_rate_battery_result = telemetry.set_rate_battery(1.0);

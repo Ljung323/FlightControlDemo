@@ -28,7 +28,6 @@ bool ChangeAltitudeDriver::changeAltitude(int targetAltitude)
         std::cout << "Setting rate failed:" << set_rate_result << std::endl;
         return false;
     }
-    std::cout << "Setting rate succeeded:" << set_rate_result << std::endl;
 
     telemetry.subscribe_position([](Telemetry::Position position) {
         std::cout << "position: " << position << std::endl;

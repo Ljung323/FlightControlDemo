@@ -4,6 +4,8 @@ import QtQuick.Layouts 1.3
 
 Item {
     property string aircraftBattery: "-"
+    property string inAir: "-"
+    property string altitude: "-"
 
     Rectangle {
         id: rect
@@ -21,11 +23,11 @@ Item {
                 spacing: 5
 
                 Text {
-                    text: qsTr(model.title)
+                    text: qsTr(model.title + ": ")
                     color: "#ffffff"
                 }
                 Text {
-                    text: qsTr(FlightPresenter.toAircraftInfoValue(model.title))
+                    text: toValue(model.title)
                     color: "#ffffff"
                 }
             }
@@ -34,6 +36,19 @@ Item {
         anchors {
             fill: rect
             margins: 20
+        }
+    }
+
+    function toValue(title) {
+        if (title === "AircraftBattery") {
+            return aircraftBattery
+        } else if (title === "InAir") {
+            return inAir
+        } else if (title === "Altitude") {
+            return altitude
+        } else {
+            console.error("invalid input")
+            return ""
         }
     }
 }

@@ -8,7 +8,7 @@ private:
     AircraftInfoDriver* aircraftInfoDriver;
 
 public:
-    Position position = Position(-1, -1, -1);
+    Position position = Position(-1, -1, -1, -1);
     float aircraftBattery = -1;
     bool isInAir = false;
 
