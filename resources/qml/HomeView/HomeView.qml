@@ -42,6 +42,8 @@ Page {
 
             onClicked: connectButtonTapped(function () {
                 stackView.push(flightView)
+                // TODO: find suitable life cycle within flightView
+                flightView.onAppear()
             })
         }
 

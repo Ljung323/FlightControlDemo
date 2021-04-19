@@ -1,0 +1,58 @@
+#include <chrono>
+#include <mavsdk/mavsdk.h>
+#include <mavsdk/plugins/action/action.h>
+#include <mavsdk/plugins/telemetry/telemetry.h>
+#include <iostream>
+#include <thread>
+#include "sources/Flight/Framework/AircraftInfoDriver.h"
+#include "sources/Flight/Domain/Position.h"
+
+using namespace mavsdk;
+using std::chrono::milliseconds;
+using std::this_thread::sleep_for;
+
+AircraftInfoDriver::AircraftInfoDriver(Mavsdk* mavsdk): subscribeThread() {
+    this->mavsdk = mavsdk;
+}
+
+AircraftInfoDriver::~AircraftInfoDriver() {
+    this->subscribeThread.join();
+}
+
+void AircraftInfoDriver::startSubscribe()
+{
+    this->subscribeThread = std::thread([this]() { this->subscribe(); });
+}
+
+void AircraftInfoDriver::subscribe() {
+    auto system = this->mavsdk->systems()[0];
+    auto telemetry = Telemetry{system};
+
+    const Telemetry::Result set_rate_position_result = telemetry.set_rate_position(1.0);
+    if (set_rate_position_result != Telemetry::Result::Success) {
+        std::cout << "Setting rate position failed:" << set_rate_position_result << std::endl;
+    }
+    telemetry.subscribe_position([this](Telemetry::Position position) {
+        this->position = Position(position.latitude_deg, position.longitude_deg, position.relative_altitude_m);
+    });
+
+    const Telemetry::Result set_rate_battery_result = telemetry.set_rate_battery(1.0);
+    if (set_rate_battery_result != Telemetry::Result::Success) {
+        std::cout << "Setting rate battery failed:" << set_rate_battery_result << std::endl;
+    }
+    telemetry.subscribe_battery([this](Telemetry::Battery battery){
+        this->aircraftBattery = battery.remaining_percent;
+    });
+
+    const Telemetry::Result set_rate_in_air_result = telemetry.set_rate_in_air(1.0);
+    if (set_rate_in_air_result != Telemetry::Result::Success) {
+        std::cout << "Setting rate in air failed:" << set_rate_in_air_result << std::endl;
+    }
+    telemetry.subscribe_in_air([this](bool isInAir){
+        this->isInAir = isInAir;
+    });
+
+    while(true) {
+        sleep_for(milliseconds(1));
+    }
+}

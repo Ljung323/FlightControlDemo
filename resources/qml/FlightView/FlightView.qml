@@ -49,6 +49,10 @@ Page {
         }
     }
 
+    function onAppear() {
+        FlightPresenter.startSubscribe()
+    }
+
     function buttonTapped(actionTitle) {
         if (actionTitle === "Takeoff") {
             FlightPresenter.takeoff({})
