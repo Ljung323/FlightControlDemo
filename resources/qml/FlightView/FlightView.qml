@@ -99,7 +99,7 @@ Page {
             FlightPresenter.takeoff({})
         } else if (actionTitle === "Altitude") {
             selectAltitudeView.show()
-        } else if (actionTitle === "HorizontalMove") {
+        } else if (actionTitle === "Land") {
             FlightPresenter.land({})
         } else {
             console.error("invalid action")

@@ -33,7 +33,7 @@ Item {
             id: selectAltitudeButton
             contentItem: Text {
                 text: qsTr("OK")
-                color: "#eeeeee"
+                color: selectAltitudeButton.pressed ? "#999999" : "#eeeeee"
                 font {
                     bold: true
                     pointSize: 16
@@ -43,7 +43,7 @@ Item {
             background: Rectangle {
                 width: parent.width + 20
                 height: parent.height
-                color: "#555555"
+                color: selectAltitudeButton.pressed ? "#333333" : "#555555"
                 radius: 5
                 anchors.centerIn: parent
             }

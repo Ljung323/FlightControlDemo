@@ -20,6 +20,12 @@ Item {
         zoomLevel: 20
     }
 
+    Text {
+        text: "＋"
+        font.pointSize: 30
+        anchors.centerIn: parent
+    }
+
     function toCoordinate(position) {
         return map.toCoordinate(position, false)
     }
