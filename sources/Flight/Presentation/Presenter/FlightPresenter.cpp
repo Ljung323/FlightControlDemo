@@ -9,6 +9,8 @@
 #include "sources/Flight/Domain/HorizontalMoveUsecase.h"
 #include "sources/Flight/Domain/LandUsecase.h"
 
+using std::to_string;
+
 FlightPresenter::FlightPresenter(
         AircraftInfoDriver* aircraftInfoDriver,
         TakeoffDriver* takeoffDriver,
@@ -27,20 +29,22 @@ void FlightPresenter::startSubscribe() {
     this->aircraftInfoDriver->startSubscribe();
 }
 
+// TODO: separate value for presentation and for action
 QString FlightPresenter::toAircraftInfoValue(QJSValue title) {
+    // TODO: consider to use enum
     QString stringTitle = title.toString();
     if (stringTitle == "AircraftBattery") {
-        return QString::fromStdString(std::to_string(aircraftInfoDriver->aircraftBattery));
+        return QString::fromStdString(to_string(int(aircraftInfoDriver->aircraftBattery * 100)));
     } else if (stringTitle == "InAir") {
-        return QString::fromStdString(aircraftInfoDriver->isInAir ? "yes" : "no"); // there should be a more simple way to just display true / false, not 0 / 1
+        return QString::fromStdString(aircraftInfoDriver->isInAir ? "yes" : "no"); // TODO: there should be a more simple way to just display true / false, not 0 / 1
     } else if (stringTitle == "Altitude") {
-        return QString::fromStdString(std::to_string(aircraftInfoDriver->position.relativeAltitude));
+        return QString::fromStdString(to_string(aircraftInfoDriver->position.relativeAltitude));
     } else if (stringTitle == "AbsoluteAltitude") {
-        return QString::fromStdString(std::to_string(aircraftInfoDriver->position.absoluteAltitude));
+        return QString::fromStdString(to_string(aircraftInfoDriver->position.absoluteAltitude));
     } else if (stringTitle == "Latitude") {
-        return QString::fromStdString(std::to_string(aircraftInfoDriver->position.latitude));
+        return QString::fromStdString(to_string(aircraftInfoDriver->position.latitude));
     } else if (stringTitle == "Longitude") {
-        return QString::fromStdString(std::to_string(aircraftInfoDriver->position.longitude));
+        return QString::fromStdString(to_string(aircraftInfoDriver->position.longitude));
     } else {
         return "invalid input";
     }

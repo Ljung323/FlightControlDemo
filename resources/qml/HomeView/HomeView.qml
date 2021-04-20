@@ -23,7 +23,7 @@ Page {
             id: connectButton
             contentItem: Text {
                 text: qsTr("Connect Aircraft")
-                color: "#eeeeee"
+                color: connectButton.pressed ? "#999999" : "#eeeeee"
                 font {
                     bold: true
                     pointSize: 24
@@ -33,7 +33,7 @@ Page {
             background: Rectangle {
                 width: parent.width + 20
                 height: parent.height
-                color: "#555555"
+                color: connectButton.pressed ? "#333333" : "#555555"
                 radius: 5
                 anchors.centerIn: parent
             }
