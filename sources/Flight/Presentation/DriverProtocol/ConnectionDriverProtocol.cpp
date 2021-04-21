@@ -1,6 +1,1 @@
-//#include "sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
-
-//class ConnectionDriverProtocol {
-//    virtual ~ConnectionDriverProtocol() = 0;
-//    virtual bool connect() = 0;
-//};
+// TODO: consider to delete this file (this is pure virtual class and all necessary definitions are written in header file)
