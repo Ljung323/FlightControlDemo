@@ -12,6 +12,5 @@ https://user-images.githubusercontent.com/82586164/115368269-e2e11180-a201-11eb-
 - [MAVSDK](https://mavsdk.mavlink.io/develop/en/getting_started/installation.html)
 
 ## TODO
-- [ ] implementation of DriverProtocol
 - [ ] adding test
 - [ ] refactoring
