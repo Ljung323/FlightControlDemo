@@ -12,11 +12,11 @@
 using std::to_string;
 
 FlightPresenter::FlightPresenter(
-        AircraftInfoDriver* aircraftInfoDriver,
-        TakeoffDriver* takeoffDriver,
-        ChangeAltitudeDriver* changeAltitudeDriver,
-        HorizontalMoveDriver* horizontalMoveDriver,
-        LandDriver* landDriver
+        AircraftInfoDriverProtocol* aircraftInfoDriver,
+        TakeoffDriverProtocol* takeoffDriver,
+        ChangeAltitudeDriverProtocol* changeAltitudeDriver,
+        HorizontalMoveDriverProtocol* horizontalMoveDriver,
+        LandDriverProtocol* landDriver
         ) {
     this->aircraftInfoDriver = aircraftInfoDriver;
     this->takeoffDriver = takeoffDriver;

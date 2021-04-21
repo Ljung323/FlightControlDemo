@@ -1,13 +1,13 @@
 #pragma once
-#include "sources/Flight/Framework/LandDriver.h"
+#include "sources/Flight/Presentation/DriverProtocol/LandDriverProtocol.h"
 
 class LandUsecase
 {
 private:
-    LandDriver* landDriver;
+    LandDriverProtocol* landDriver;
 
 public:
-    LandUsecase(LandDriver* landDriver);
+    LandUsecase(LandDriverProtocol* landDriver);
 
     bool land();
 };

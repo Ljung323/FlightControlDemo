@@ -1,9 +1,10 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
+#include "sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
 
 using namespace mavsdk;
 
-class ChangeAltitudeDriver
+class ChangeAltitudeDriver: public ChangeAltitudeDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
@@ -11,5 +12,5 @@ private:
 public:
     ChangeAltitudeDriver(Mavsdk* mavsdk);
 
-    bool changeAltitude(int targetAltitude);
+    bool changeAltitude(int targetAltitude) override;
 };

@@ -1,9 +1,10 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
+#include "sources/Flight/Presentation/DriverProtocol/TakeoffDriverProtocol.h"
 
 using namespace mavsdk;
 
-class TakeoffDriver
+class TakeoffDriver: public TakeoffDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
@@ -11,5 +12,5 @@ private:
 public:
     TakeoffDriver(Mavsdk* mavsdk);
 
-    bool takeoff();
+    bool takeoff() override;
 };

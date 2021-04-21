@@ -2,6 +2,7 @@
 
 class ConnectionDriverProtocol {
 public:
-    virtual bool connect() = 0;
     virtual ~ConnectionDriverProtocol() = 0;
+
+    virtual bool connect() = 0;
 };

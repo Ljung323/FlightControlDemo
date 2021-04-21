@@ -14,6 +14,8 @@ ChangeAltitudeDriver::ChangeAltitudeDriver(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
+ChangeAltitudeDriverProtocol::~ChangeAltitudeDriverProtocol() {}
+
 bool ChangeAltitudeDriver::changeAltitude(int targetAltitude)
 {
     if (!mavsdk->is_connected()) {

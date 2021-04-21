@@ -19,6 +19,8 @@ AircraftInfoDriver::~AircraftInfoDriver() {
     this->subscribeThread.join();
 }
 
+AircraftInfoDriverProtocol::~AircraftInfoDriverProtocol() {}
+
 void AircraftInfoDriver::startSubscribe()
 {
     this->subscribeThread = std::thread([this]() { this->subscribe(); });

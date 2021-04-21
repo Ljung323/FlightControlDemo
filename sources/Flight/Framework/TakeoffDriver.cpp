@@ -9,6 +9,8 @@ TakeoffDriver::TakeoffDriver(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
+TakeoffDriverProtocol::~TakeoffDriverProtocol() {}
+
 bool TakeoffDriver::takeoff()
 {
     if (!mavsdk->is_connected()) {

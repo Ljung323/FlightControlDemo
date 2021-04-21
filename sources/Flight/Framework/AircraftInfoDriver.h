@@ -1,11 +1,12 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
 #include <thread>
+#include "sources/Flight/Presentation/DriverProtocol/AircraftInfoDriverProtocol.h"
 #include "sources/Flight/Domain/Position.h"
 
 using namespace mavsdk;
 
-class AircraftInfoDriver
+class AircraftInfoDriver: public AircraftInfoDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
@@ -14,12 +15,8 @@ private:
     void subscribe();
 
 public:
-    Position position = Position(-1, -1, -1, -1);
-    float aircraftBattery = -1;
-    bool isInAir = false;
-
     AircraftInfoDriver(Mavsdk* mavsdk);
-    ~AircraftInfoDriver();
+    ~AircraftInfoDriver() override;
 
-    void startSubscribe();
+    void startSubscribe() override;
 };

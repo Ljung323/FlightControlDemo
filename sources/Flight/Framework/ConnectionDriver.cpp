@@ -2,7 +2,6 @@
 #include <iostream>
 #include <future>
 #include "sources/Flight/Framework/ConnectionDriver.h"
-#include "sources/Flight/Presentation/DriverProtocol/ConnectionDriverProtocol.h"
 
 using namespace mavsdk;
 using std::chrono::seconds;

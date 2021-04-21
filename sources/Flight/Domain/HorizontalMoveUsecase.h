@@ -5,10 +5,10 @@
 class HorizontalMoveUsecase
 {
 private:
-    HorizontalMoveDriver* horizontalMoveDriver;
+    HorizontalMoveDriverProtocol* horizontalMoveDriver;
 
 public:
-    HorizontalMoveUsecase(HorizontalMoveDriver* horizontalMoveDriver);
+    HorizontalMoveUsecase(HorizontalMoveDriverProtocol* horizontalMoveDriver);
 
     bool moveHorizontally(Position position);
 };

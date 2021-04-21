@@ -15,6 +15,8 @@ HorizontalMoveDriver::HorizontalMoveDriver(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
+HorizontalMoveDriverProtocol::~HorizontalMoveDriverProtocol() {}
+
 bool HorizontalMoveDriver::moveHorizontally(Position position)
 {
     if (!mavsdk->is_connected()) {

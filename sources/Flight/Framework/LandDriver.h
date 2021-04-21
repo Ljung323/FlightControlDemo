@@ -1,9 +1,10 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
+#include "sources/Flight/Presentation/DriverProtocol/LandDriverProtocol.h"
 
 using namespace mavsdk;
 
-class LandDriver
+class LandDriver: public LandDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
@@ -11,5 +12,5 @@ private:
 public:
     LandDriver(Mavsdk* mavsdk);
 
-    bool land();
+    bool land() override;
 };

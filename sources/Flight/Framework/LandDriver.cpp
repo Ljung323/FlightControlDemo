@@ -9,6 +9,8 @@ LandDriver::LandDriver(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
+LandDriverProtocol::~LandDriverProtocol() {}
+
 bool LandDriver::land()
 {
     if (!mavsdk->is_connected()) {

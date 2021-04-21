@@ -1,13 +1,13 @@
 #pragma once
-#include "sources/Flight/Framework/ChangeAltitudeDriver.h"
+#include "sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
 
 class ChangeAltitudeUsecase
 {
 private:
-    ChangeAltitudeDriver* changeAltitudeDriver;
+    ChangeAltitudeDriverProtocol* changeAltitudeDriver;
 
 public:
-    ChangeAltitudeUsecase(ChangeAltitudeDriver* changeAltitudeDriver);
+    ChangeAltitudeUsecase(ChangeAltitudeDriverProtocol* changeAltitudeDriver);
 
     bool changeAltitude(int targetAltitude);
 };
