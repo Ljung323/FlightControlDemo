@@ -4,13 +4,13 @@
 
 using namespace mavsdk;
 
-class ChangeAltitudeDriver: public ChangeAltitudeDriverProtocol
+class ChangeAltitudeDriverForMAVSDK: public ChangeAltitudeDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
 
 public:
-    ChangeAltitudeDriver(Mavsdk* mavsdk);
+    ChangeAltitudeDriverForMAVSDK(Mavsdk* mavsdk);
 
     bool changeAltitude(int targetAltitude) override;
 };

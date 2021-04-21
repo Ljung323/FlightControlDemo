@@ -6,7 +6,7 @@
 
 using namespace mavsdk;
 
-class AircraftInfoDriver: public AircraftInfoDriverProtocol
+class AircraftInfoDriverForMAVSDK: public AircraftInfoDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
@@ -15,8 +15,8 @@ private:
     void subscribe();
 
 public:
-    AircraftInfoDriver(Mavsdk* mavsdk);
-    ~AircraftInfoDriver() override;
+    AircraftInfoDriverForMAVSDK(Mavsdk* mavsdk);
+    ~AircraftInfoDriverForMAVSDK() override;
 
     void startSubscribe() override;
 };

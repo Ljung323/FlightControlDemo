@@ -4,13 +4,13 @@
 
 using namespace mavsdk;
 
-class LandDriver: public LandDriverProtocol
+class LandDriverForMAVSDK: public LandDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
 
 public:
-    LandDriver(Mavsdk* mavsdk);
+    LandDriverForMAVSDK(Mavsdk* mavsdk);
 
     bool land() override;
 };

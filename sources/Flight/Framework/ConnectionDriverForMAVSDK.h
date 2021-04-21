@@ -4,13 +4,13 @@
 
 using namespace mavsdk;
 
-class ConnectionDriver: public ConnectionDriverProtocol
+class ConnectionDriverForMAVSDK: public ConnectionDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
 
 public:
-    ConnectionDriver(Mavsdk* mavsdk);
+    ConnectionDriverForMAVSDK(Mavsdk* mavsdk);
 
     bool connect() override;
 };

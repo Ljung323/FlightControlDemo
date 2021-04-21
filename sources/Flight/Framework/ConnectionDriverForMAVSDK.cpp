@@ -1,19 +1,19 @@
 #include <mavsdk/mavsdk.h>
 #include <iostream>
 #include <future>
-#include "sources/Flight/Framework/ConnectionDriver.h"
+#include "sources/Flight/Framework/ConnectionDriverForMAVSDK.h"
 
 using namespace mavsdk;
 using std::chrono::seconds;
 using std::this_thread::sleep_for;
 
-ConnectionDriver::ConnectionDriver(Mavsdk* mavsdk) {
+ConnectionDriverForMAVSDK::ConnectionDriverForMAVSDK(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
 ConnectionDriverProtocol::~ConnectionDriverProtocol() {}
 
-bool ConnectionDriver::connect()
+bool ConnectionDriverForMAVSDK::connect()
 {
     std::string connection_url = "udp://:14540";
     ConnectionResult connection_result;

@@ -1,17 +1,17 @@
 #include <mavsdk/mavsdk.h>
 #include <mavsdk/plugins/action/action.h>
 #include <iostream>
-#include "sources/Flight/Framework/TakeoffDriver.h"
+#include "sources/Flight/Framework/TakeoffDriverForMAVSDK.h"
 
 using namespace mavsdk;
 
-TakeoffDriver::TakeoffDriver(Mavsdk* mavsdk) {
+TakeoffDriverForMAVSDK::TakeoffDriverForMAVSDK(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
 TakeoffDriverProtocol::~TakeoffDriverProtocol() {}
 
-bool TakeoffDriver::takeoff()
+bool TakeoffDriverForMAVSDK::takeoff()
 {
     if (!mavsdk->is_connected()) {
         std::cout << "aircraft is not connected" << std::endl;

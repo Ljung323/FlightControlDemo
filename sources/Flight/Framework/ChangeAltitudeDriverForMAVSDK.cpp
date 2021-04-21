@@ -4,19 +4,19 @@
 #include <mavsdk/plugins/telemetry/telemetry.h>
 #include <iostream>
 #include <thread>
-#include "sources/Flight/Framework/ChangeAltitudeDriver.h"
+#include "sources/Flight/Framework/ChangeAltitudeDriverForMAVSDK.h"
 
 using namespace mavsdk;
 using std::chrono::seconds;
 using std::this_thread::sleep_for;
 
-ChangeAltitudeDriver::ChangeAltitudeDriver(Mavsdk* mavsdk) {
+ChangeAltitudeDriverForMAVSDK::ChangeAltitudeDriverForMAVSDK(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
 ChangeAltitudeDriverProtocol::~ChangeAltitudeDriverProtocol() {}
 
-bool ChangeAltitudeDriver::changeAltitude(int targetAltitude)
+bool ChangeAltitudeDriverForMAVSDK::changeAltitude(int targetAltitude)
 {
     if (!mavsdk->is_connected()) {
         std::cout << "aircraft is not connected" << std::endl;

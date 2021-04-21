@@ -4,13 +4,13 @@
 
 using namespace mavsdk;
 
-class TakeoffDriver: public TakeoffDriverProtocol
+class TakeoffDriverForMAVSDK: public TakeoffDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
 
 public:
-    TakeoffDriver(Mavsdk* mavsdk);
+    TakeoffDriverForMAVSDK(Mavsdk* mavsdk);
 
     bool takeoff() override;
 };

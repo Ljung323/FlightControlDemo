@@ -5,13 +5,13 @@
 
 using namespace mavsdk;
 
-class HorizontalMoveDriver: public HorizontalMoveDriverProtocol
+class HorizontalMoveDriverForMAVSDK: public HorizontalMoveDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
 
 public:
-    HorizontalMoveDriver(Mavsdk* mavsdk);
+    HorizontalMoveDriverForMAVSDK(Mavsdk* mavsdk);
 
     bool moveHorizontally(Position position) override;
 };
