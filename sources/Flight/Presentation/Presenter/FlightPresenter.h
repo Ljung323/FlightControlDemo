@@ -30,9 +30,10 @@ public:
             );
 
     Q_INVOKABLE void startSubscribe();
-    Q_INVOKABLE QString toAircraftInfoValue(QJSValue title);
+    Q_INVOKABLE QString toAircraftInfoValueForDisplay(QJSValue title);
+    Q_INVOKABLE QJSValue toAircraftInfoValue(QJSValue title);
     Q_INVOKABLE void takeoff(QJSValue callback);
     Q_INVOKABLE void changeAltitude(QJSValue targetAltitude, QJSValue callback);
-    Q_INVOKABLE void moveHorizontally(QJSValue latitude, QJSValue longitude, QJSValue relativeAltitude, QJSValue absoluteAltitude, QJSValue callback);
+    Q_INVOKABLE void moveHorizontally(QJSValue latitude, QJSValue longitude, QJSValue callback);
     Q_INVOKABLE void land(QJSValue callback);
 };
