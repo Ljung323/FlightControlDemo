@@ -1,9 +1,10 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
+#include "sources/Flight/Presentation/DriverProtocol/ConnectionDriverProtocol.h"
 
 using namespace mavsdk;
 
-class ConnectionDriver
+class ConnectionDriver: public ConnectionDriverProtocol
 {
 private:
     Mavsdk* mavsdk;
@@ -11,5 +12,5 @@ private:
 public:
     ConnectionDriver(Mavsdk* mavsdk);
 
-    bool connect();
+    bool connect() override;
 };
