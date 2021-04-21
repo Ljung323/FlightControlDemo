@@ -1,13 +1,13 @@
 #pragma once
-#include "sources/Flight/Framework/ConnectionDriver.h"
+#include "sources/Flight/Presentation/DriverProtocol/ConnectionDriverProtocol.h"
 
 class ConnectionUsecase
 {
 private:
-    ConnectionDriver* connectionDriver;
+    ConnectionDriverProtocol* connectionDriver;
 
 public:
-    ConnectionUsecase(ConnectionDriver* connectionDriver);
+    ConnectionUsecase(ConnectionDriverProtocol* connectionDriver);
 
     bool connect();
 };

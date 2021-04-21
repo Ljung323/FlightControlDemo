@@ -1,6 +1,6 @@
 #include "sources/Flight/Domain/ChangeAltitudeUsecase.h"
 
-ChangeAltitudeUsecase::ChangeAltitudeUsecase(ChangeAltitudeDriver* changeAltitudeDriver) {
+ChangeAltitudeUsecase::ChangeAltitudeUsecase(ChangeAltitudeDriverProtocol* changeAltitudeDriver) {
     this->changeAltitudeDriver = changeAltitudeDriver;
 }
 

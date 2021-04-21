@@ -4,7 +4,7 @@
 #include "sources/Flight/Presentation/Presenter/HomePresenter.h"
 #include "sources/Flight/Domain/ConnectionUsecase.h"
 
-HomePresenter::HomePresenter(ConnectionDriver* connectionDriver) {
+HomePresenter::HomePresenter(ConnectionDriverProtocol* connectionDriver) {
     this->connectionDriver = connectionDriver;
 }
 

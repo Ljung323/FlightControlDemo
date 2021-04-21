@@ -4,27 +4,29 @@
 #include <mavsdk/plugins/telemetry/telemetry.h>
 #include <iostream>
 #include <thread>
-#include "sources/Flight/Framework/AircraftInfoDriver.h"
+#include "sources/Flight/Framework/AircraftInfoDriverForMAVSDK.h"
 #include "sources/Flight/Domain/Position.h"
 
 using namespace mavsdk;
 using std::chrono::milliseconds;
 using std::this_thread::sleep_for;
 
-AircraftInfoDriver::AircraftInfoDriver(Mavsdk* mavsdk): subscribeThread() {
+AircraftInfoDriverForMAVSDK::AircraftInfoDriverForMAVSDK(Mavsdk* mavsdk): subscribeThread() {
     this->mavsdk = mavsdk;
 }
 
-AircraftInfoDriver::~AircraftInfoDriver() {
+AircraftInfoDriverForMAVSDK::~AircraftInfoDriverForMAVSDK() {
     this->subscribeThread.join();
 }
 
-void AircraftInfoDriver::startSubscribe()
+AircraftInfoDriverProtocol::~AircraftInfoDriverProtocol() {}
+
+void AircraftInfoDriverForMAVSDK::startSubscribe()
 {
     this->subscribeThread = std::thread([this]() { this->subscribe(); });
 }
 
-void AircraftInfoDriver::subscribe() {
+void AircraftInfoDriverForMAVSDK::subscribe() {
     auto system = this->mavsdk->systems()[0];
     auto telemetry = Telemetry{system};
 

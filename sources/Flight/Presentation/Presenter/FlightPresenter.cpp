@@ -3,7 +3,6 @@
 #include <QJSEngine>
 #include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
 #include "sources/Flight/Domain/Position.h"
-#include "sources/Flight/Domain/AircraftInfoUsecase.h"
 #include "sources/Flight/Domain/TakeoffUsecase.h"
 #include "sources/Flight/Domain/ChangeAltitudeUsecase.h"
 #include "sources/Flight/Domain/HorizontalMoveUsecase.h"
@@ -12,11 +11,11 @@
 using std::to_string;
 
 FlightPresenter::FlightPresenter(
-        AircraftInfoDriver* aircraftInfoDriver,
-        TakeoffDriver* takeoffDriver,
-        ChangeAltitudeDriver* changeAltitudeDriver,
-        HorizontalMoveDriver* horizontalMoveDriver,
-        LandDriver* landDriver
+        AircraftInfoDriverProtocol* aircraftInfoDriver,
+        TakeoffDriverProtocol* takeoffDriver,
+        ChangeAltitudeDriverProtocol* changeAltitudeDriver,
+        HorizontalMoveDriverProtocol* horizontalMoveDriver,
+        LandDriverProtocol* landDriver
         ) {
     this->aircraftInfoDriver = aircraftInfoDriver;
     this->takeoffDriver = takeoffDriver;

@@ -1,13 +1,13 @@
 #pragma once
-#include "sources/Flight/Framework/TakeoffDriver.h"
+#include "sources/Flight/Presentation/DriverProtocol/TakeoffDriverProtocol.h"
 
 class TakeoffUsecase
 {
 private:
-    TakeoffDriver* takeoffDriver;
+    TakeoffDriverProtocol* takeoffDriver;
 
 public:
-    TakeoffUsecase(TakeoffDriver* takeoffDriver);
+    TakeoffUsecase(TakeoffDriverProtocol* takeoffDriver);
 
     bool takeoff();
 };

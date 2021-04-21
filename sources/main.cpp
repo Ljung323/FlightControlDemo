@@ -2,12 +2,12 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include "sources/Flight/Framework/ConnectionDriver.h"
-#include "sources/Flight/Framework/AircraftInfoDriver.h"
-#include "sources/Flight/Framework/TakeoffDriver.h"
-#include "sources/Flight/Framework/ChangeAltitudeDriver.h"
-#include "sources/Flight/Framework/HorizontalMoveDriver.h"
-#include "sources/Flight/Framework/LandDriver.h"
+#include "sources/Flight/Framework/ConnectionDriverForMAVSDK.h"
+#include "sources/Flight/Framework/AircraftInfoDriverForMAVSDK.h"
+#include "sources/Flight/Framework/TakeoffDriverForMAVSDK.h"
+#include "sources/Flight/Framework/ChangeAltitudeDriverForMAVSDK.h"
+#include "sources/Flight/Framework/HorizontalMoveDriverForMAVSDK.h"
+#include "sources/Flight/Framework/LandDriverForMAVSDK.h"
 #include "sources/Flight/Presentation/Presenter/HomePresenter.h"
 #include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
 
@@ -20,13 +20,14 @@ int main(int argc, char *argv[])
 
     mavsdk::Mavsdk mavsdk;
 
-    // drivers
-    ConnectionDriver connectionDriver(&mavsdk);
-    AircraftInfoDriver aircraftInfoDriver(&mavsdk);
-    ChangeAltitudeDriver changeAltitudeDriver(&mavsdk);
-    HorizontalMoveDriver horizontalMoveDriver(&mavsdk);
-    TakeoffDriver takeoffDriver(&mavsdk);
-    LandDriver landDriver(&mavsdk);
+    // drivers for MAVSDK
+    // they can be changed to other types of drivers (ex. driver For MAVLINK)
+    ConnectionDriverForMAVSDK connectionDriver(&mavsdk);
+    AircraftInfoDriverForMAVSDK aircraftInfoDriver(&mavsdk);
+    ChangeAltitudeDriverForMAVSDK changeAltitudeDriver(&mavsdk);
+    HorizontalMoveDriverForMAVSDK horizontalMoveDriver(&mavsdk);
+    TakeoffDriverForMAVSDK takeoffDriver(&mavsdk);
+    LandDriverForMAVSDK landDriver(&mavsdk);
 
     // presenters
     HomePresenter homePresenter(&connectionDriver);

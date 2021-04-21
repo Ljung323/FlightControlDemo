@@ -1,14 +1,14 @@
 #pragma once
-#include "sources/Flight/Framework/HorizontalMoveDriver.h"
+#include "sources/Flight/Framework/HorizontalMoveDriverForMAVSDK.h"
 #include "sources/Flight/Domain/Position.h"
 
 class HorizontalMoveUsecase
 {
 private:
-    HorizontalMoveDriver* horizontalMoveDriver;
+    HorizontalMoveDriverProtocol* horizontalMoveDriver;
 
 public:
-    HorizontalMoveUsecase(HorizontalMoveDriver* horizontalMoveDriver);
+    HorizontalMoveUsecase(HorizontalMoveDriverProtocol* horizontalMoveDriver);
 
     bool moveHorizontally(Position position);
 };

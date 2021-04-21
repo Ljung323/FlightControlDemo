@@ -4,18 +4,20 @@
 #include <mavsdk/plugins/telemetry/telemetry.h>
 #include <iostream>
 #include <thread>
-#include "sources/Flight/Framework/HorizontalMoveDriver.h"
+#include "sources/Flight/Framework/HorizontalMoveDriverForMAVSDK.h"
 #include "sources/Flight/Domain/Position.h"
 
 using namespace mavsdk;
 using std::chrono::seconds;
 using std::this_thread::sleep_for;
 
-HorizontalMoveDriver::HorizontalMoveDriver(Mavsdk* mavsdk) {
+HorizontalMoveDriverForMAVSDK::HorizontalMoveDriverForMAVSDK(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
-bool HorizontalMoveDriver::moveHorizontally(Position position)
+HorizontalMoveDriverProtocol::~HorizontalMoveDriverProtocol() {}
+
+bool HorizontalMoveDriverForMAVSDK::moveHorizontally(Position position)
 {
     if (!mavsdk->is_connected()) {
         std::cout << "aircraft is not connected" << std::endl;

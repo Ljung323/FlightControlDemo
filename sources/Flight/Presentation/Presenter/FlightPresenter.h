@@ -1,32 +1,32 @@
 #pragma once
 #include <QObject>
 #include <QJSValue>
-#include "sources/Flight/Framework/AircraftInfoDriver.h"
-#include "sources/Flight/Framework/TakeoffDriver.h"
-#include "sources/Flight/Framework/ChangeAltitudeDriver.h"
-#include "sources/Flight/Framework/HorizontalMoveDriver.h"
-#include "sources/Flight/Framework/LandDriver.h"
+#include "sources/Flight/Presentation/DriverProtocol/AircraftInfoDriverProtocol.h"
+#include "sources/Flight/Presentation/DriverProtocol/TakeoffDriverProtocol.h"
+#include "sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
+#include "sources/Flight/Presentation/DriverProtocol/HorizontalMoveDriverProtocol.h"
+#include "sources/Flight/Presentation/DriverProtocol/LandDriverProtocol.h"
 
 class FlightPresenter: public QObject
 {
     Q_OBJECT
 
 private:
-    AircraftInfoDriver* aircraftInfoDriver;
-    TakeoffDriver* takeoffDriver;
-    ChangeAltitudeDriver* changeAltitudeDriver;
-    HorizontalMoveDriver* horizontalMoveDriver;
-    LandDriver* landDriver;
+    AircraftInfoDriverProtocol* aircraftInfoDriver;
+    TakeoffDriverProtocol* takeoffDriver;
+    ChangeAltitudeDriverProtocol* changeAltitudeDriver;
+    HorizontalMoveDriverProtocol* horizontalMoveDriver;
+    LandDriverProtocol* landDriver;
 
     void runCallback(QJSValue callback, bool result);
 
 public:
     FlightPresenter(
-            AircraftInfoDriver* aircraftInfoDriver,
-            TakeoffDriver* takeoffDriver,
-            ChangeAltitudeDriver* changeAltitudeDriver,
-            HorizontalMoveDriver* horizontalMoveDriver,
-            LandDriver* landDriver
+            AircraftInfoDriverProtocol* aircraftInfoDriver,
+            TakeoffDriverProtocol* takeoffDriver,
+            ChangeAltitudeDriverProtocol* changeAltitudeDriver,
+            HorizontalMoveDriverProtocol* horizontalMoveDriver,
+            LandDriverProtocol* landDriver
             );
 
     Q_INVOKABLE void startSubscribe();

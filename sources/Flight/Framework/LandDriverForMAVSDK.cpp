@@ -1,15 +1,17 @@
 #include <mavsdk/mavsdk.h>
 #include <mavsdk/plugins/action/action.h>
 #include <iostream>
-#include "sources/Flight/Framework/LandDriver.h"
+#include "sources/Flight/Framework/LandDriverForMAVSDK.h"
 
 using namespace mavsdk;
 
-LandDriver::LandDriver(Mavsdk* mavsdk) {
+LandDriverForMAVSDK::LandDriverForMAVSDK(Mavsdk* mavsdk) {
     this->mavsdk = mavsdk;
 }
 
-bool LandDriver::land()
+LandDriverProtocol::~LandDriverProtocol() {}
+
+bool LandDriverForMAVSDK::land()
 {
     if (!mavsdk->is_connected()) {
         std::cout << "aircraft is not connected" << std::endl;

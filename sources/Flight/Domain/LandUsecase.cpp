@@ -1,6 +1,6 @@
 #include "sources/Flight/Domain/LandUsecase.h"
 
-LandUsecase::LandUsecase(LandDriver* landDriver) {
+LandUsecase::LandUsecase(LandDriverProtocol* landDriver) {
     this->landDriver = landDriver;
 }
 
