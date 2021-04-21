@@ -28,22 +28,27 @@ void FlightPresenter::startSubscribe() {
     this->aircraftInfoDriver->startSubscribe();
 }
 
-// TODO: separate value for presentation and for action
-QString FlightPresenter::toAircraftInfoValue(QJSValue title) {
+QString FlightPresenter::toAircraftInfoValueForDisplay(QJSValue title) {
     // TODO: consider to use enum
     QString stringTitle = title.toString();
     if (stringTitle == "AircraftBattery") {
-        return QString::fromStdString(to_string(int(aircraftInfoDriver->aircraftBattery * 100)));
+        return QString::fromStdString(to_string(int(aircraftInfoDriver->aircraftBattery * 100)) + "%");
     } else if (stringTitle == "InAir") {
         return QString::fromStdString(aircraftInfoDriver->isInAir ? "yes" : "no"); // TODO: there should be a more simple way to just display true / false, not 0 / 1
     } else if (stringTitle == "Altitude") {
-        return QString::fromStdString(to_string(aircraftInfoDriver->position.relativeAltitude));
-    } else if (stringTitle == "AbsoluteAltitude") {
-        return QString::fromStdString(to_string(aircraftInfoDriver->position.absoluteAltitude));
-    } else if (stringTitle == "Latitude") {
-        return QString::fromStdString(to_string(aircraftInfoDriver->position.latitude));
+        return QString::fromStdString(to_string(int(aircraftInfoDriver->position.relativeAltitude)) + "m");
+    } else {
+        return "invalid input";
+    }
+}
+
+QJSValue FlightPresenter::toAircraftInfoValue(QJSValue title) {
+    // TODO: consider to use enum
+    QString stringTitle = title.toString();
+    if (stringTitle == "Latitude") {
+        return aircraftInfoDriver->position.latitude;
     } else if (stringTitle == "Longitude") {
-        return QString::fromStdString(to_string(aircraftInfoDriver->position.longitude));
+        return aircraftInfoDriver->position.longitude;
     } else {
         return "invalid input";
     }
@@ -67,11 +72,16 @@ void FlightPresenter::changeAltitude(QJSValue targetAltitude, QJSValue callback)
     this->runCallback(callback, usecase.changeAltitude(targetAltitude.toInt()));
 }
 
-void FlightPresenter::moveHorizontally(QJSValue latitude, QJSValue longitude, QJSValue relativeAltitude, QJSValue absoluteAltitude, QJSValue callback) {
+void FlightPresenter::moveHorizontally(QJSValue latitude, QJSValue longitude, QJSValue callback) {
     HorizontalMoveUsecase usecase(this->horizontalMoveDriver);
     this->runCallback(
                 callback,
-                usecase.moveHorizontally(Position(latitude.toNumber(), longitude.toNumber(), relativeAltitude.toNumber(), absoluteAltitude.toNumber()))
+                usecase.moveHorizontally(Position(
+                                             latitude.toNumber(),
+                                             longitude.toNumber(),
+                                             aircraftInfoDriver->position.relativeAltitude,
+                                             aircraftInfoDriver->position.absoluteAltitude)
+                                         )
                 );
 }
 

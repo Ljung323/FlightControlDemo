@@ -80,16 +80,14 @@ Page {
         FlightPresenter.moveHorizontally(
                     coordinate.latitude,
                     coordinate.longitude,
-                    FlightPresenter.toAircraftInfoValue("Altitude"),
-                    FlightPresenter.toAircraftInfoValue("AbsoluteAltitude"),
                     {}
                     )
     }
 
     function updateAircraftInfo() {
-        infoView.aircraftBattery = FlightPresenter.toAircraftInfoValue("AircraftBattery")
-        infoView.inAir = FlightPresenter.toAircraftInfoValue("InAir")
-        infoView.altitude = FlightPresenter.toAircraftInfoValue("Altitude")
+        infoView.aircraftBattery = FlightPresenter.toAircraftInfoValueForDisplay("AircraftBattery")
+        infoView.inAir = FlightPresenter.toAircraftInfoValueForDisplay("InAir")
+        infoView.altitude = FlightPresenter.toAircraftInfoValueForDisplay("Altitude")
         mapView.latitude = FlightPresenter.toAircraftInfoValue("Latitude")
         mapView.longitude = FlightPresenter.toAircraftInfoValue("Longitude")
     }
