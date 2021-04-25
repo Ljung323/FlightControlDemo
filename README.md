@@ -17,6 +17,20 @@ https://user-images.githubusercontent.com/82586164/115368269-e2e11180-a201-11eb-
 ## Requirement
 - [MAVSDK](https://mavsdk.mavlink.io/develop/en/getting_started/installation.html)
 
+## Architecture
+This project respects Clean Architecture.  
+
+#### Domain Layer
+This layer includes domain objects and usecases.  
+Usecases define the set of UAV actions.
+
+#### Presentation Layer
+This layer includes presenters and interfaces for drivers.
+
+#### Framework Layer
+Since the view is written as qml resources, this layer includes drivers for UAV control.  
+Drivers provide the concrete codes with a certain type of API(ex. MAVSDK, MAVLINK).
+
 ## TODO
 - [ ] adding test
 - [ ] refactoring
