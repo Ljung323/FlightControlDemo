@@ -23,10 +23,6 @@ Item {
                 spacing: 5
 
                 Text {
-                    text: qsTr(model.title + ": ")
-                    color: "#ffffff"
-                }
-                Text {
                     text: toValue(model.title)
                     color: "#ffffff"
                 }

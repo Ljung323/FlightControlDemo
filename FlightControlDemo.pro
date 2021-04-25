@@ -46,6 +46,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     sources/Flight/Domain/ChangeAltitudeUsecase.h \
     sources/Flight/Domain/ConnectionUsecase.h \
+    sources/Flight/Domain/FlightAction.h \
+    sources/Flight/Domain/FlightInfo.h \
     sources/Flight/Domain/HorizontalMoveUsecase.h \
     sources/Flight/Domain/LandUsecase.h \
     sources/Flight/Domain/Position.h \

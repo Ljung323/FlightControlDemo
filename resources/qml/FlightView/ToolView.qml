@@ -6,33 +6,22 @@ Item {
     ColumnLayout {
         spacing: 60
 
-        Repeater {
-            model: ActionListModel {}
+        ActionButton {
+            titleText: "Takeoff"
+            Layout.alignment: Qt.AlignHCenter
+            onClicked: flightView.takeoffTapped()
+        }
 
-            delegate: Button {
-                id: button
+        ActionButton {
+            titleText: "Altitude"
+            Layout.alignment: Qt.AlignHCenter
+            onClicked: flightView.selectAltitudeTapped()
+        }
 
-                contentItem: Text {
-                    text: qsTr(model.title)
-                    color: button.pressed ? "#aaaaaa" : "#ffffff"
-                    font {
-                        bold: true
-                        pointSize: 12
-                    }
-                }
-
-                background: Rectangle {
-                    width: 60
-                    height: width
-                    color: button.pressed ? "#444444" : "#777777"
-                    radius: 5
-                    anchors.centerIn: parent
-                }
-
-                Layout.alignment: Qt.AlignHCenter
-
-                onClicked: flightView.buttonTapped(model.title)
-            }
+        ActionButton {
+            titleText: "Land"
+            Layout.alignment: Qt.AlignHCenter
+            onClicked: flightView.landTapped()
         }
     }
 }

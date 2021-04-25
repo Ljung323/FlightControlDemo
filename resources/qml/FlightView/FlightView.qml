@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.12
+import FlightInfo 1.0
 
 Page {
     id: flightView
@@ -67,7 +68,10 @@ Page {
 
         interval: 1
         repeat: true
-        onTriggered: updateAircraftInfo()
+        onTriggered: {
+            updateAircraftInfo()
+            updateCenterLocationOnMap()
+        }
     }
 
     function onAppear() {
@@ -85,22 +89,25 @@ Page {
     }
 
     function updateAircraftInfo() {
-        infoView.aircraftBattery = FlightPresenter.toAircraftInfoValueForDisplay("AircraftBattery")
-        infoView.inAir = FlightPresenter.toAircraftInfoValueForDisplay("InAir")
-        infoView.altitude = FlightPresenter.toAircraftInfoValueForDisplay("Altitude")
+        infoView.aircraftBattery = FlightPresenter.toAircraftInfoValueForDisplay(FlightInfo.AircraftBattery)
+        infoView.inAir = FlightPresenter.toAircraftInfoValueForDisplay(FlightInfo.InAir)
+        infoView.altitude = FlightPresenter.toAircraftInfoValueForDisplay(FlightInfo.Altitude)
+    }
+
+    function updateCenterLocationOnMap() {
         mapView.latitude = FlightPresenter.toAircraftInfoValue("Latitude")
         mapView.longitude = FlightPresenter.toAircraftInfoValue("Longitude")
     }
 
-    function buttonTapped(actionTitle) {
-        if (actionTitle === "Takeoff") {
-            FlightPresenter.takeoff({})
-        } else if (actionTitle === "Altitude") {
-            selectAltitudeView.show()
-        } else if (actionTitle === "Land") {
-            FlightPresenter.land({})
-        } else {
-            console.error("invalid action")
-        }
+    function takeoffTapped() {
+        FlightPresenter.takeoff({})
+    }
+
+    function selectAltitudeTapped() {
+        selectAltitudeView.show()
+    }
+
+    function landTapped() {
+        FlightPresenter.land({})
     }
 }
