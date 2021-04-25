@@ -30,7 +30,7 @@ public:
             );
 
     Q_INVOKABLE void startSubscribe();
-    Q_INVOKABLE QString toAircraftInfoValueForDisplay(QJSValue title);
+    Q_INVOKABLE QString toAircraftInfoValueForDisplay(QJSValue item);
     Q_INVOKABLE QJSValue toAircraftInfoValue(QJSValue title);
     Q_INVOKABLE void takeoff(QJSValue callback);
     Q_INVOKABLE void changeAltitude(QJSValue targetAltitude, QJSValue callback);

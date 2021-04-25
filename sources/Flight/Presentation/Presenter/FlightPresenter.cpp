@@ -7,8 +7,12 @@
 #include "sources/Flight/Domain/ChangeAltitudeUsecase.h"
 #include "sources/Flight/Domain/HorizontalMoveUsecase.h"
 #include "sources/Flight/Domain/LandUsecase.h"
+#include "sources/Flight/Domain/FlightInfo.h"
+
+#define STR(var) #var
 
 using std::to_string;
+using std::string;
 
 FlightPresenter::FlightPresenter(
         AircraftInfoDriverProtocol* aircraftInfoDriver,
@@ -28,17 +32,31 @@ void FlightPresenter::startSubscribe() {
     this->aircraftInfoDriver->startSubscribe();
 }
 
-QString FlightPresenter::toAircraftInfoValueForDisplay(QJSValue title) {
-    // TODO: consider to use enum
-    QString stringTitle = title.toString();
-    if (stringTitle == "AircraftBattery") {
-        return QString::fromStdString(to_string(int(aircraftInfoDriver->aircraftBattery * 100)) + "%");
-    } else if (stringTitle == "InAir") {
-        return QString::fromStdString(aircraftInfoDriver->isInAir ? "yes" : "no"); // TODO: there should be a more simple way to just display true / false, not 0 / 1
-    } else if (stringTitle == "Altitude") {
-        return QString::fromStdString(to_string(int(aircraftInfoDriver->position.relativeAltitude)) + "m");
-    } else {
-        return "invalid input";
+QString FlightPresenter::toAircraftInfoValueForDisplay(QJSValue item) {
+    int flightAction = item.toInt();
+    switch (flightAction) {
+    case FlightInfo::AircraftBattery:
+        {
+            string title = STR(AircraftBattery);
+            string value = to_string(int(this->aircraftInfoDriver->aircraftBattery * 100)) + "%";
+            value = title + ": " + value;
+            return QString::fromStdString(value);
+        }
+    case FlightInfo::InAir:
+        {
+            string title = STR(InAir);
+            // TODO: there should be a more simple way to just display true / false, not 0 / 1
+            string value = this->aircraftInfoDriver->isInAir ? "yes" : "no";
+            value = title + ": " + value;
+            return QString::fromStdString(value);
+        }
+    case FlightInfo::Altitude:
+        {
+            string title = STR(Altitude);
+            string value = to_string(int(this->aircraftInfoDriver->position.relativeAltitude)) + "m";
+            value = title + ": " + value;
+            return QString::fromStdString(value);
+        }
     }
 }
 

@@ -5,9 +5,9 @@
         <file>HomeView/HomeView.qml</file>
         <file>FlightView/InfoView.qml</file>
         <file>FlightView/ToolView.qml</file>
-        <file>FlightView/ActionListModel.qml</file>
         <file>FlightView/InfoListModel.qml</file>
         <file>FlightView/SelectAltitudeView.qml</file>
         <file>FlightView/MapView.qml</file>
+        <file>FlightView/ActionButton.qml</file>
     </qresource>
 </RCC>

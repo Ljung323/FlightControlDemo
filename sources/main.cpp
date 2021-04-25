@@ -10,6 +10,8 @@
 #include "sources/Flight/Framework/LandDriverForMAVSDK.h"
 #include "sources/Flight/Presentation/Presenter/HomePresenter.h"
 #include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
+#include "sources/Flight/Domain/FlightAction.h"
+#include "sources/Flight/Domain/FlightInfo.h"
 
 int main(int argc, char *argv[])
 {
@@ -34,6 +36,10 @@ int main(int argc, char *argv[])
     FlightPresenter flightPresenter(&aircraftInfoDriver, &takeoffDriver, &changeAltitudeDriver, &horizontalMoveDriver, &landDriver);
     engine.rootContext()->setContextProperty("HomePresenter", &homePresenter);
     engine.rootContext()->setContextProperty("FlightPresenter", &flightPresenter);
+
+    // enum for list model
+    qmlRegisterUncreatableType<FlightAction>("FlightAction", 1, 0, "FlightAction", "Not creatable as it is an enum type");
+    qmlRegisterUncreatableType<FlightInfo>("FlightInfo", 1, 0, "FlightInfo", "Not creatable as it is an enum type");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())

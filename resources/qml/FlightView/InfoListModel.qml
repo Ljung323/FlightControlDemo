@@ -1,5 +1,6 @@
 import QtQuick 2.0
 
+// TODO: try to use enum ActionInfo
 ListModel {
     id: infoListModel
 
