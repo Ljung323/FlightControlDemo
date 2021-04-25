@@ -4,7 +4,7 @@ ChangeAltitudeUsecase::ChangeAltitudeUsecase(ChangeAltitudeDriverProtocol* chang
     this->changeAltitudeDriver = changeAltitudeDriver;
 }
 
-bool ChangeAltitudeUsecase::changeAltitude(int targetAltitude)
+bool ChangeAltitudeUsecase::changeAltitude(int targetAltitude, Position currentPosition)
 {
-    return this->changeAltitudeDriver->changeAltitude(targetAltitude);
+    return this->changeAltitudeDriver->changeAltitude(targetAltitude, currentPosition);
 }
