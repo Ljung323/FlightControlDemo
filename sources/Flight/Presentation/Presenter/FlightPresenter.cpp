@@ -87,7 +87,7 @@ void FlightPresenter::takeoff(QJSValue callback)
 
 void FlightPresenter::changeAltitude(QJSValue targetAltitude, QJSValue callback) {
     ChangeAltitudeUsecase usecase(this->changeAltitudeDriver);
-    this->runCallback(callback, usecase.changeAltitude(targetAltitude.toInt()));
+    this->runCallback(callback, usecase.changeAltitude(targetAltitude.toInt(), aircraftInfoDriver->position));
 }
 
 void FlightPresenter::moveHorizontally(QJSValue latitude, QJSValue longitude, QJSValue callback) {
