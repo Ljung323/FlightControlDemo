@@ -1,5 +1,5 @@
 # FlightControlDemo
-demo application for flight control with MAVSDK
+demo application for flight control with MAVSDK  
 aimed to practice C++, Qt/QML, and MAVLink(MAVSDK)
 
 ## Demo
