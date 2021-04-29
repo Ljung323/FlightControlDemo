@@ -1,5 +1,6 @@
 # FlightControlDemo
 demo application for flight control with MAVSDK
+aimed to practice C++, Qt/QML, and MAVLink(MAVSDK)
 
 ## Demo
 Tested with PX4 SITL for Gazebo on macOS Catalina v10.15.4  
