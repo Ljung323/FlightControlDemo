@@ -15,9 +15,7 @@ AircraftInfoDriverForMAVSDK::AircraftInfoDriverForMAVSDK(Mavsdk* mavsdk): subscr
     this->mavsdk = mavsdk;
 }
 
-AircraftInfoDriverForMAVSDK::~AircraftInfoDriverForMAVSDK() {
-    this->subscribeThread.join();
-}
+AircraftInfoDriverForMAVSDK::~AircraftInfoDriverForMAVSDK() {}
 
 AircraftInfoDriverProtocol::~AircraftInfoDriverProtocol() {}
 
