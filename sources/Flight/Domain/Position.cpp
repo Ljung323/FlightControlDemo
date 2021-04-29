@@ -1,4 +1,4 @@
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Domain/Position.h"
 
 Position::Position(float latitude, float longitude, float relativeAltitude, float absoluteAltitude) {
     this->latitude = latitude;

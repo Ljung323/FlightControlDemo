@@ -1,7 +1,7 @@
 #include <mavsdk/mavsdk.h>
 #include <iostream>
 #include <future>
-#include "sources/Flight/Framework/ConnectionDriverForMAVSDK.h"
+#include "Flight/Framework/ConnectionDriverForMAVSDK.h"
 
 using namespace mavsdk;
 using std::chrono::seconds;

@@ -1,13 +1,13 @@
 #include <iostream>
 #include <QJSValue>
 #include <QJSEngine>
-#include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
-#include "sources/Flight/Domain/Position.h"
-#include "sources/Flight/Domain/TakeoffUsecase.h"
-#include "sources/Flight/Domain/ChangeAltitudeUsecase.h"
-#include "sources/Flight/Domain/HorizontalMoveUsecase.h"
-#include "sources/Flight/Domain/LandUsecase.h"
-#include "sources/Flight/Domain/FlightInfo.h"
+#include "Flight/Presentation/Presenter/FlightPresenter.h"
+#include "Flight/Domain/Position.h"
+#include "Flight/Domain/TakeoffUsecase.h"
+#include "Flight/Domain/ChangeAltitudeUsecase.h"
+#include "Flight/Domain/HorizontalMoveUsecase.h"
+#include "Flight/Domain/LandUsecase.h"
+#include "Flight/Domain/FlightInfo.h"
 
 #define STR(var) #var
 

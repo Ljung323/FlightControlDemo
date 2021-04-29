@@ -1,6 +1,6 @@
 #pragma once
-#include "sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
+#include "Flight/Domain/Position.h"
 
 class ChangeAltitudeUsecase
 {

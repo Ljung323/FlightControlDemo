@@ -1,8 +1,8 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
 #include <thread>
-#include "sources/Flight/Presentation/DriverProtocol/AircraftInfoDriverProtocol.h"
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Presentation/DriverProtocol/AircraftInfoDriverProtocol.h"
+#include "Flight/Domain/Position.h"
 
 using namespace mavsdk;
 

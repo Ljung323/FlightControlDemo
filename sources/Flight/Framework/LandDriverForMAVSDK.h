@@ -1,6 +1,6 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
-#include "sources/Flight/Presentation/DriverProtocol/LandDriverProtocol.h"
+#include "Flight/Presentation/DriverProtocol/LandDriverProtocol.h"
 
 using namespace mavsdk;
 

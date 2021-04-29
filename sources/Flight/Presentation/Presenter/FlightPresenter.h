@@ -1,11 +1,11 @@
 #pragma once
 #include <QObject>
 #include <QJSValue>
-#include "sources/Flight/Presentation/DriverProtocol/AircraftInfoDriverProtocol.h"
-#include "sources/Flight/Presentation/DriverProtocol/TakeoffDriverProtocol.h"
-#include "sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
-#include "sources/Flight/Presentation/DriverProtocol/HorizontalMoveDriverProtocol.h"
-#include "sources/Flight/Presentation/DriverProtocol/LandDriverProtocol.h"
+#include "Flight/Presentation/DriverProtocol/AircraftInfoDriverProtocol.h"
+#include "Flight/Presentation/DriverProtocol/TakeoffDriverProtocol.h"
+#include "Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
+#include "Flight/Presentation/DriverProtocol/HorizontalMoveDriverProtocol.h"
+#include "Flight/Presentation/DriverProtocol/LandDriverProtocol.h"
 
 class FlightPresenter: public QObject
 {

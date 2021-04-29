@@ -1,6 +1,6 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
-#include "sources/Flight/Presentation/DriverProtocol/ConnectionDriverProtocol.h"
+#include "Flight/Presentation/DriverProtocol/ConnectionDriverProtocol.h"
 
 using namespace mavsdk;
 

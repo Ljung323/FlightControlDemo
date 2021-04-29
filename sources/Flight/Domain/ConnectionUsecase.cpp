@@ -1,4 +1,4 @@
-#include "sources/Flight/Domain/ConnectionUsecase.h"
+#include "Flight/Domain/ConnectionUsecase.h"
 
 ConnectionUsecase::ConnectionUsecase(ConnectionDriverProtocol* connectionDriver) {
     this->connectionDriver = connectionDriver;

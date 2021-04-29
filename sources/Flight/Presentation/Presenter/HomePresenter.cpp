@@ -1,8 +1,8 @@
 #include <iostream>
 #include <QJSValue>
 #include <QJSEngine>
-#include "sources/Flight/Presentation/Presenter/HomePresenter.h"
-#include "sources/Flight/Domain/ConnectionUsecase.h"
+#include "Flight/Presentation/Presenter/HomePresenter.h"
+#include "Flight/Domain/ConnectionUsecase.h"
 
 HomePresenter::HomePresenter(ConnectionDriverProtocol* connectionDriver) {
     this->connectionDriver = connectionDriver;

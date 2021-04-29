@@ -1,7 +1,7 @@
 #include <mavsdk/mavsdk.h>
 #include <mavsdk/plugins/action/action.h>
 #include <iostream>
-#include "sources/Flight/Framework/LandDriverForMAVSDK.h"
+#include "Flight/Framework/LandDriverForMAVSDK.h"
 
 using namespace mavsdk;
 

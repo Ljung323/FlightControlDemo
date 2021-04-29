@@ -1,6 +1,6 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
-#include "sources/Flight/Presentation/DriverProtocol/TakeoffDriverProtocol.h"
+#include "Flight/Presentation/DriverProtocol/TakeoffDriverProtocol.h"
 
 using namespace mavsdk;
 

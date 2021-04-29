@@ -4,7 +4,7 @@
 #include <mavsdk/plugins/telemetry/telemetry.h>
 #include <iostream>
 #include <thread>
-#include "sources/Flight/Framework/ChangeAltitudeDriverForMAVSDK.h"
+#include "Flight/Framework/ChangeAltitudeDriverForMAVSDK.h"
 
 using namespace mavsdk;
 using std::chrono::seconds;

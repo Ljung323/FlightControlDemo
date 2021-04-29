@@ -1,7 +1,7 @@
 #pragma once
 #include <mavsdk/mavsdk.h>
-#include "sources/Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Presentation/DriverProtocol/ChangeAltitudeDriverProtocol.h"
+#include "Flight/Domain/Position.h"
 
 using namespace mavsdk;
 

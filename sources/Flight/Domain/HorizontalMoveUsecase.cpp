@@ -1,5 +1,5 @@
-#include "sources/Flight/Domain/HorizontalMoveUsecase.h"
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Domain/HorizontalMoveUsecase.h"
+#include "Flight/Domain/Position.h"
 
 HorizontalMoveUsecase::HorizontalMoveUsecase(HorizontalMoveDriverProtocol* horizontalMoveDriver) {
     this->horizontalMoveDriver = horizontalMoveDriver;
