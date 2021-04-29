@@ -15,6 +15,9 @@ https://user-images.githubusercontent.com/82586164/115368269-e2e11180-a201-11eb-
 - Show aircaft information
 
 ## Requirement
+- Qt Creator 4.10.2
+- Qt 5.13.2
+- C++11 compliant compiler
 - [MAVSDK](https://mavsdk.mavlink.io/develop/en/getting_started/installation.html)
 
 ## Architecture
@@ -30,7 +33,3 @@ This layer includes presenters and interfaces for drivers.
 #### Framework Layer
 Since the view is written as qml resources, this layer includes drivers for UAV control.  
 Drivers provide the concrete codes with a certain type of API(ex. MAVSDK, MAVLINK).
-
-## TODO
-- [ ] adding test
-- [ ] refactoring
