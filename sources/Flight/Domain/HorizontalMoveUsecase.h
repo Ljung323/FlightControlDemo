@@ -1,6 +1,6 @@
 #pragma once
-#include "sources/Flight/Framework/HorizontalMoveDriverForMAVSDK.h"
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Presentation/DriverProtocol/HorizontalMoveDriverProtocol.h"
+#include "Flight/Domain/Position.h"
 
 class HorizontalMoveUsecase
 {

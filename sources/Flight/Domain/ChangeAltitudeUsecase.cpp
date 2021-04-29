@@ -1,4 +1,4 @@
-#include "sources/Flight/Domain/ChangeAltitudeUsecase.h"
+#include "Flight/Domain/ChangeAltitudeUsecase.h"
 
 ChangeAltitudeUsecase::ChangeAltitudeUsecase(ChangeAltitudeDriverProtocol* changeAltitudeDriver) {
     this->changeAltitudeDriver = changeAltitudeDriver;

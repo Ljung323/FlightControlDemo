@@ -4,8 +4,8 @@
 #include <mavsdk/plugins/telemetry/telemetry.h>
 #include <iostream>
 #include <thread>
-#include "sources/Flight/Framework/AircraftInfoDriverForMAVSDK.h"
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Framework/AircraftInfoDriverForMAVSDK.h"
+#include "Flight/Domain/Position.h"
 
 using namespace mavsdk;
 using std::chrono::milliseconds;

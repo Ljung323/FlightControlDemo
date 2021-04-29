@@ -1,5 +1,5 @@
 #pragma once
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Domain/Position.h"
 
 class HorizontalMoveDriverProtocol {
 public:

@@ -1,7 +1,7 @@
 #include <mavsdk/mavsdk.h>
 #include <mavsdk/plugins/action/action.h>
 #include <iostream>
-#include "sources/Flight/Framework/TakeoffDriverForMAVSDK.h"
+#include "Flight/Framework/TakeoffDriverForMAVSDK.h"
 
 using namespace mavsdk;
 

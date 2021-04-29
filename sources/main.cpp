@@ -2,16 +2,16 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include "sources/Flight/Framework/ConnectionDriverForMAVSDK.h"
-#include "sources/Flight/Framework/AircraftInfoDriverForMAVSDK.h"
-#include "sources/Flight/Framework/TakeoffDriverForMAVSDK.h"
-#include "sources/Flight/Framework/ChangeAltitudeDriverForMAVSDK.h"
-#include "sources/Flight/Framework/HorizontalMoveDriverForMAVSDK.h"
-#include "sources/Flight/Framework/LandDriverForMAVSDK.h"
-#include "sources/Flight/Presentation/Presenter/HomePresenter.h"
-#include "sources/Flight/Presentation/Presenter/FlightPresenter.h"
-#include "sources/Flight/Domain/FlightAction.h"
-#include "sources/Flight/Domain/FlightInfo.h"
+#include "Flight/Framework/ConnectionDriverForMAVSDK.h"
+#include "Flight/Framework/AircraftInfoDriverForMAVSDK.h"
+#include "Flight/Framework/TakeoffDriverForMAVSDK.h"
+#include "Flight/Framework/ChangeAltitudeDriverForMAVSDK.h"
+#include "Flight/Framework/HorizontalMoveDriverForMAVSDK.h"
+#include "Flight/Framework/LandDriverForMAVSDK.h"
+#include "Flight/Presentation/Presenter/HomePresenter.h"
+#include "Flight/Presentation/Presenter/FlightPresenter.h"
+#include "Flight/Domain/FlightAction.h"
+#include "Flight/Domain/FlightInfo.h"
 
 int main(int argc, char *argv[])
 {

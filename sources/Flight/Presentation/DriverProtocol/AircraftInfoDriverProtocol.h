@@ -1,7 +1,6 @@
 #pragma once
-#include <mavsdk/mavsdk.h>
 #include <thread>
-#include "sources/Flight/Domain/Position.h"
+#include "Flight/Domain/Position.h"
 
 class AircraftInfoDriverProtocol {
 public:

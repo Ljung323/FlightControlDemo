@@ -1,4 +1,4 @@
-#include "sources/Flight/Domain/TakeoffUsecase.h"
+#include "Flight/Domain/TakeoffUsecase.h"
 
 TakeoffUsecase::TakeoffUsecase(TakeoffDriverProtocol* takeoffDriver) {
     this->takeoffDriver = takeoffDriver;
